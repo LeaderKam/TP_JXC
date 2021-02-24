@@ -79,6 +79,12 @@ export class ArticleListComponent implements OnInit {
     ];
 
     this.primengConfig.ripple = true;
+    for (const key in this.products) {
+      if (Object.prototype.hasOwnProperty.call(this.products, key)) {
+        console.log(this.products[key]);
+
+      }
+    }
   }
 
   onSortChange(event) {
