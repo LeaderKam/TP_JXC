@@ -25,6 +25,7 @@ export class ArticleComponent implements OnInit {
   isSubmitting = false;
   isDeleting = false;
   val1: number;
+  currentRate: number = 3;
   constructor(
     private route: ActivatedRoute,
     private articlesService: ArticlesService,
