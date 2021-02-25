@@ -27,6 +27,8 @@ import {DropdownModule} from 'primeng/dropdown';
 import {DialogModule} from 'primeng/dialog';
 import {InputTextModule} from 'primeng/inputtext';
 import {RippleModule} from 'primeng/ripple';
+import { MapComponent } from './map/map.component';
+import { UploadFileComponent } from './upload-file/upload-file.component';
 
 
 @NgModule({

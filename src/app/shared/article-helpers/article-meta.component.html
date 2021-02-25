@@ -3,7 +3,7 @@
     <img height= "200" [src]="article.author.image" class="rounded-circle"
 
     [alt]="article.title"
-    style="width: 100% !important;border-radius: 100%;" />
+    style="width: 100px !important;border-radius: 50%;" />
   </a>
 
   <div class="info">
@@ -11,10 +11,10 @@
       [routerLink]="['/profile', article.author.username]">
       {{ article.author.username }}
     </a>
-    <span class="date">
+    <!-- <span class="date">
       {{ article.createdAt | date: 'longDate' }}
-    </span>
+    </span> -->
   </div>
 
-  <ng-content></ng-content>
+
 

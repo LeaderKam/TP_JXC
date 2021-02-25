@@ -45,9 +45,12 @@
         style="width: 20%"
       >
         <option *ngFor="let property of properties" value="{{ property }}">
-          <span *ngIf = "property === 'tagList'">tag</span>
-          <span *ngIf = "property === 'author.username'">author</span>
-          <span *ngIf = "property !== 'author.username' && property !== 'tagList'">{{property}}</span>
+          <span *ngIf="property === 'tagList'">tag</span>
+          <span *ngIf="property === 'author.username'">author</span>
+          <span
+            *ngIf="property !== 'author.username' && property !== 'tagList'"
+            >{{ property }}</span
+          >
         </option>
       </select>
 
@@ -86,11 +89,7 @@
   <ng-template let-product pTemplate="listItem">
     <div class="p-col-12">
       <div class="product-list-item">
-        <img class="rounded-circle"
-        style="border-radius: 50%;"
-        [src]="product.author.image"
-          [alt]="product.title"
-        />
+        <app-article-meta [article]="product"> </app-article-meta>
         <div class="product-list-detail">
           <div class="product-name">
             <a
@@ -101,15 +100,13 @@
             </a>
           </div>
           <div class="product-description">{{ product.description }}</div>
-          <span>Read more...</span> <br />
+          <span class="date">
+            {{ product.createdAt | date: "longDate" }}
+          </span>
+          <br />
+          <br />
+          <div><span>Read more...</span></div>
           <!--          <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>-->
-          <i class="pi pi-tag product-category-icon"></i
-          ><span class="product-category"><ul class="tag-list">
-            <li *ngFor="let tag of product.tagList"
-              class="tag-default tag-pill tag-outline">
-              {{ tag }}
-            </li>
-          </ul></span>
         </div>
         <div class="product-list-action">
           <div style="display: inline-block">
@@ -122,6 +119,19 @@
             </app-favorite-button>
           </div>
           <br />
+          <i class="pi pi-tag product-category-icon"></i
+          ><span class="product-category"
+            ><ul class="tag-list">
+              <li
+                *ngFor="let tag of product.tagList"
+                class="tag-default tag-pill tag-outline"
+              >
+                {{ tag }}
+              </li>
+            </ul></span
+          >
+
+          <br />
         </div>
       </div>
     </div>
@@ -132,43 +142,20 @@
         <div class="product-grid-item-top">
           <div>
             <i class="pi pi-tag product-category-icon"></i>
-            <span class="product-category"><ul class="tag-list">
-              <li *ngFor="let tag of product.tagList"
-                class="tag-default tag-pill tag-outline">
-                {{ tag }}
-              </li>
-            </ul></span>
+            <span class="product-category"
+              ><ul class="tag-list">
+                <li
+                  *ngFor="let tag of product.tagList"
+                  class="tag-default tag-pill tag-outline"
+                >
+                  {{ tag }}
+                </li>
+              </ul></span
+            >
           </div>
         </div>
         <div class="product-grid-item-content">
-          <app-article-meta [article]="product">
-            <!-- <app-favorite-button
-              [article]="product"
-              (toggle)="onToggleFavorite($event)"
-              class="pull-xs-right">
-              {{product.favoritesCount}}
-            </app-favorite-button> -->
-          </app-article-meta>
-          <div class="product-name">
-            <a
-              [routerLink]="['/article', product.slug]"
-              style="text-decoration: none"
-            >
-              {{ product.title | uppercase }}
-            </a>
-          </div>
-          <div class="product-description">{{ product.description }}</div>
-          <span>Read more...</span>
-          <br />
-          <div style="display: inline-block">
-            <app-favorite-button
-              [article]="product"
-              (toggle)="onToggleFavorite($event)"
-              class="pull-xs-right"
-            >
-              {{ product.favoritesCount }}
-            </app-favorite-button>
-          </div>
+          <app-article-preview [article]="product"></app-article-preview>
           <!--          <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>-->
         </div>
         <!-- <div class="product-grid-item-bottom">
