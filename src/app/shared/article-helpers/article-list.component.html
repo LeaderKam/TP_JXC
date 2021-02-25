@@ -66,11 +66,14 @@
   <ng-template let-product pTemplate="listItem">
     <div class="p-col-12">
       <div class="product-list-item">
-        <img class="rounded-circle"
-        style="border-radius: 50%;"
-        [src]="product.author.image"
-          [alt]="product.title"
-        />
+        <app-article-meta [article]="product">
+          <!-- <app-favorite-button
+            [article]="product"
+            (toggle)="onToggleFavorite($event)"
+            class="pull-xs-right">
+            {{product.favoritesCount}}
+          </app-favorite-button> -->
+        </app-article-meta>
         <div class="product-list-detail">
           <div class="product-name">
             <a
