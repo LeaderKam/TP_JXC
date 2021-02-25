@@ -69,6 +69,10 @@ export class ArticleListComponent implements OnInit {
         label: 'Body',
         value: 'body'
       },
+      {
+        label: 'Tag',
+        value: 'tag'
+      }
     ];
 
     this.runQuery2();
