@@ -29,7 +29,7 @@
 
 <p-dataView
   #dv
-  [value]="products"
+  [value]="results"
   [paginator]="true"
   [rows]="limit"
   [filterBy]="selectedValue"
@@ -68,7 +68,7 @@
       <div class="product-list-item">
         <img class="rounded-circle"
         style="border-radius: 50%;"
-          src="https://e1.pngegg.com/pngimages/444/382/png-clipart-frost-pro-for-os-x-icon-set-now-free-contacts-male-profile-thumbnail.png"
+        [src]="product.author.image"
           [alt]="product.title"
         />
         <div class="product-list-detail">
@@ -123,7 +123,7 @@
         <div class="product-grid-item-content">
           <img
           class="rounded-circle"
-            src="https://e1.pngegg.com/pngimages/444/382/png-clipart-frost-pro-for-os-x-icon-set-now-free-contacts-male-profile-thumbnail.png"
+            src="{{product.author.image}}"
             [alt]="product.title"
             style="width: 50% !important;border-radius: 100%;"
           />
