@@ -45,7 +45,9 @@
         style="width: 20%"
       >
         <option *ngFor="let property of properties" value="{{ property }}">
-          {{ property }}
+          <span *ngIf = "property === 'tagList'">tag</span>
+          <span *ngIf = "property === 'author.username'">author</span>
+          <span *ngIf = "property !== 'author.username' && property !== 'tagList'">{{property}}</span>
         </option>
       </select>
 

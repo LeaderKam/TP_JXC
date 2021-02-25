@@ -39,7 +39,7 @@ export class ArticleListComponent implements OnInit {
   selectedValue = 'title';
   properties = ['title', 'slug',
   'description',
-  'body'];
+  'body','tagList', 'author.username'];
 
 
   searchArticleName = '';
