@@ -53,12 +53,32 @@
 
       <span class="p-input-icon-left p-mb-2 p-mb-md-0">
         <i class="pi pi-search"></i>
-        <input
+        
+          <input
+          *ngIf = "selectedValue === 'tagList'"
           type="search"
           pInputText
-          [placeholder]="'Recherché par ' + selectedValue"
+          [placeholder]="'Recherche par tag'"
           (input)="dv.filter($event.target.value)"
         />
+     
+     
+          <input
+          type="search"
+          *ngIf = "selectedValue === 'author.username'"
+          pInputText
+          [placeholder]="'Recherche par author'"
+          (input)="dv.filter($event.target.value)"
+        />
+     
+          <input
+          type="search"
+          *ngIf = "selectedValue !== 'author.username' && selectedValue !== 'tagList'"
+          pInputText
+          [placeholder]="'Recherche ' + selectedValue"
+          (input)="dv.filter($event.target.value)"
+        />
+      
       </span>
       <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
     </div>
