@@ -7,12 +7,15 @@ import { AuthGuard } from '../core';
 import { SharedModule } from '../shared';
 import { EditorRoutingModule } from './editor-routing.module';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MapComponent } from '../map/map.component';
 
 @NgModule({
   imports: [SharedModule,
     EditorRoutingModule,
     MatAutocompleteModule],
-  declarations: [EditorComponent],
+  declarations: [EditorComponent,
+    MapComponent
+  ],
   providers: [EditableArticleResolver]
 })
 export class EditorModule {}
