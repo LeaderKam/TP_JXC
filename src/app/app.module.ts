@@ -20,7 +20,6 @@ import { StatisticComponent } from './statistic/statistic.component';
 import { ChartsModule } from 'ng2-charts';
 import { MyBarChartComponent } from './statistic/my-bar-chart/my-bar-chart.component';
 
-
 import {DataViewModule} from 'primeng/dataview';
 import {ButtonModule} from 'primeng/button';
 import {PanelModule} from 'primeng/panel';
