@@ -182,7 +182,7 @@ Dans le but d'avoir une application de bout en bout, Nous avons déployé notre 
 + création du serveur nginx et sa configuration pour trouver les fichier de production
 + Lancement du back de l'application en arriere plan pour pouvoir y accéder meme si nous ne somme pas connecté à la machine virtuelle.
 + Configuration du serveur nginx pour écouter le serveur sur le bon port et transmetre les requetes au bon endroit
-+ mise en place d'un certificat pour une connexion sécurisé en HTTPS 
++ mise en place d'un certificat pour une connexion sécurisé en HTTPS avec l'outils Certbot
 + Ci-dessous le fichier de configuration nginx
 
 ```
