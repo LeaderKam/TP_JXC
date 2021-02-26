@@ -16,7 +16,7 @@ Step 4 : go to localhost:4200
 
 2. Then we used the component mat-autocomplete of the Material library in the html of our component "editor".
 
-3. Next in the typescript part of the component "editor" we used the service "tagsService" to fetch the popular tags that already exist, and linked them to the <mat-option> of our mat-autocomplete component.
+3. Next in the typescript part of the component "editor" we used the service "tagsService" to fetch the popular tags that already exist, and linked them to the <mat-option> of our mat-autocomplete component using one way binding.
 
 4. Finally we used a filter async in the html of the component "editor" to filter the options based on what the user is typing.
 
@@ -42,7 +42,7 @@ searchArticleName: is the typing text that appear in the input field
 articleSearch:'title':searchArticleName"
 
 
-### adding of limit field for effiscient search
+### adding of limit field for efficient search
 
 # Steps to reproduce :
 
@@ -179,8 +179,8 @@ import {RatingModule} from 'primeng/rating';
 import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 
-# Composant umpload-file
-Le composant prend en charge la chargement d'une image et de son affichage automatiquement. Nous avons pensé à ajouter ce composant pour permetre d'ajouter une photo de profil à la création d'un nouveau compte par exemple. Pour bien profiter du concept de la réutilisation du composant nous avons aussi l'idée d'associer des images à une article dès sa cration. Ce composant nous a permis également de mettre en oeuvre concrètemet le concept du binding bi-directionnel. ce composant est très simple en utlisant des balises html de base et type script.
+# Composant upload-file
+Le composant prend en charge la chargement d'une image et de son affichage automatiquement. Nous avons pensé à ajouter ce composant pour permetre d'ajouter une photo de profil à la création d'un nouveau compte par exemple. Pour bien profiter du concept de la réutilisation du composant nous avons aussi l'idée d'associer des images à une article dès sa cration. Ce composant nous a permis également de mettre en oeuvre concrètemet le concept du binding bi-directionnel. ce composant est très simple en utlisant des balises html de base et typescript.
 # Composant map
 Nous avons créé ce composant map, à la base, pour pouvoir choisir une position à la création d'un article et cela en sélactionnant une position à partir d'une map. Pour y arriver nous avons utilisé leaflet. <br> Leaflet est la principale bibliothèque JavaScript open source pour les cartes interactives adaptées aux mobiles. Pesant à peine 39 Ko de JS , il possède toutes les fonctionnalités de cartographie dont la plupart des développeurs ont besoin 
 # Déploiement du projet
