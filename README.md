@@ -1,6 +1,6 @@
 # Étapes à suivre :
 
-Étape 0 : git clone https://github.com/ibrahimelmejor/realWorldFront.git
+Étape 0 : git clone https://github.com/LeaderKam/TP_JXC.git
 
 Étaoe 1 : cd TP_JXC
 
