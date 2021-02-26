@@ -11,12 +11,14 @@
   {
     background-color: darkgray;
   }
+  ::ng-deep #mat-autocomplete-0{
+    z-index: 1000 !important;
+  }
 </style>
 <div class="editor-page">
   <div class="container page">
     <div class="row">
       <div class="col-md-10 offset-md-1 col-xs-12">
-        <app-map></app-map>
         <app-list-errors [errors]="errors"></app-list-errors>
 
         <form [formGroup]="articleForm">
@@ -62,6 +64,8 @@
                   </mat-option>
                 </mat-autocomplete>
               </div>
+              <app-map></app-map>
+
               <!-- <div class="tag-list">
        <span *ngFor="let tag of article.tagList"
          class="tag-default tag-pill">
