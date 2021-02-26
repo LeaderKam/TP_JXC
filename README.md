@@ -2,7 +2,7 @@
 
 Step 0 : git clone https://github.com/ibrahimelmejor/realWorldFront.git
 
-Step 1 : cd realWorldFront
+Step 1 : cd TP_JXC
 
 Step 2 : npm install
 
@@ -38,7 +38,7 @@ articleSearch:'title':searchArticleName"
 
 Step 0 : git clone https://github.com/ibrahimelmejor/realWorldFront.git
 
-Step 1 : cd realWorldFront
+Step 1 : cd TP_JXC
 
 Step 2 : npm install
 
