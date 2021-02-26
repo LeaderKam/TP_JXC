@@ -8,6 +8,8 @@ import * as L from 'leaflet';
 })
 export class MapComponent implements AfterViewInit {
   map;
+  latitude = 48.114384;
+  longitude = 3.767876;
 
   // retrieve from https://gist.github.com/ThomasG77/61fa02b35abf4b971390
   smallIcon = new L.Icon({
@@ -19,6 +21,7 @@ export class MapComponent implements AfterViewInit {
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
     shadowSize: [41, 41]
   });
+  cord = {};
 
   constructor() { }
 
@@ -40,7 +43,7 @@ export class MapComponent implements AfterViewInit {
     });
 
     const mainLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      minZoom: 12,
+      minZoom: 5,
       maxZoom: 17,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     });
@@ -49,20 +52,29 @@ export class MapComponent implements AfterViewInit {
     const descriptionWikipedia = `
       Le parc du Thabor`;
     const popupOptions = {
-      coords: parcThabor,
-      text: descriptionWikipedia,
-      open: true
+      coords: parcThabor
     };
-    this.addMarker(popupOptions);
+
+    this.addMarker(parcThabor);
+
+    this.map.on('click', function (e) {
+      this.cord = {
+        lat: e.latlng.lat,
+        lng: e.latlng.lng,
+      };
+     // this.addMarker(this.cord);
+
+      alert("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
+    });
+    //this.addMarker(this.cord);
   }
 
-  addMarker({ coords, text, open }) {
+  addMarker(coords) {
     const marker = L.marker([coords.lat, coords.lng], { icon: this.smallIcon });
-    if (open) {
-      marker.addTo(this.map).bindPopup(text).openPopup();
-    } else {
-      marker.addTo(this.map).bindPopup(text);
-    }
+    marker.addTo(this.map);
   }
-
+  onChoseLocation(event) {
+   // console.log(event);
+  }
 }
+

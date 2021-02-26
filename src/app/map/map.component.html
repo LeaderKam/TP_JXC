@@ -1,5 +1,5 @@
 <div class="map-wrapper">
   <div class="map-border">
-    <div id="map"></div>
+    <div id="map" [latitude]="latitude" [longitude]="longitude" (click)="onChoseLocation($event) "></div>
   </div>
 </div>
