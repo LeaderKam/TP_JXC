@@ -10,6 +10,8 @@
 
 Étape 4 : go to localhost:4200
 
+Remarque: une fois authentifié avec un compte, pour voir les articles il faut aller dans l'onglet **Global feed** au lieu de **Your feed** (il était comme cela dans l'application de départ).
+
 # Taches effectuées:
 
 ## Composant Auto-completion de l'input tag:
