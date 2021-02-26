@@ -51,16 +51,17 @@ searchArticleName: l'élément recherchant
 articleSearch:'title':searchArticleName"
 
 
-### ajouter un champ limite pour la recherche efficace.
+### ajouter un champ limite pour la recherche efficace:
 
-nous avons utilisé le composant primeng qui nous permet de faire la recherche affichage en grille ou en liste.
-
+Nous avons la possibilité de saisir le nombre d'articles sur lequel nous effectuons notre recherche.
 
 # Utilisation de primeng
 
 #### npm install primeng --save
 #### npm install primeicons --save
 
+## Composant DataView:
+Nous avons utilisé le composant primeng qui nous permet de faire la recherche affichage en grille ou en liste.
 ## Composant upload-file
 Le composant prend en charge la chargement d'une image et de son affichage automatiquement. Nous avons pensé à ajouter ce composant pour permetre d'ajouter une photo de profil à la création d'un nouveau compte par exemple. Pour bien profiter du concept de la réutilisation du composant nous avons aussi l'idée d'associer des images à une article dès sa cration. Ce composant nous a permis également de mettre en oeuvre concrètemet le concept du binding bi-directionnel. ce composant est très simple en utlisant des balises html de base et typescript.
 ## Composant map
