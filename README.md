@@ -1,24 +1,24 @@
-# Steps to reproduce :
+# Étapes à suivre :
 
-Step 0 : git clone https://github.com/ibrahimelmejor/realWorldFront.git
+Étape 0 : git clone https://github.com/ibrahimelmejor/realWorldFront.git
 
-Step 1 : cd TP_JXC
+Étaoe 1 : cd TP_JXC
 
-Step 2 : npm install
+Étape 2 : npm install
 
-Step 3 : npm start
+Étape 3 : npm start
 
-Step 4 : go to localhost:4200
+Étape 4 : go to localhost:4200
 
-# Auto-completion of tag input:
+# Auto-completion de l'input tag:
 
-1. To do this task we started by removing the tags that are empty from the popular tags.
+1. Pour faire cette tache nous avons commencé par supprimer tous les tags vides de la liste des tags poppulaires.
 
-2. Then we used the component mat-autocomplete of the Material library in the html of our component "editor".
+2. Après nous avons utilisé le composant mat-autocomplete de la librairie material dans l'html de notre composant "editor".
 
-3. Next in the typescript part of the component "editor" we used the service "tagsService" to fetch the popular tags that already exist, and linked them to the <mat-option> of our mat-autocomplete component using one way binding.
+3. Ensuite dans la partie typescript du composant "editor" nous avons utilisé le service "tagService" pour extraire les tags populaires qui existent déjà, après nous les avons relié avec les <mat-option> de notre composant mat-autocomplete en utilisant le one way binding.
 
-4. Finally we used a filter async in the html of the component "editor" to filter the options based on what the user is typing.
+4. Finalement nous avons utilisé le filtre async dans le html de notre composant "editor" pour filtrer les options en se basant sur ce que l'utilisateur a saisi.
 
 # Filtre des article :
 
