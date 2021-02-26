@@ -10,6 +10,16 @@ Step 3 : npm start
 
 Step 4 : go to localhost:4200
 
+# Auto-completion of tag input:
+
+1. To do this task we started by removing the tags that are empty from the popular tags.
+
+2. Then we used the component mat-autocomplete of the Material library in the html of our component "editor".
+
+3. Next in the typescript part of the component "editor" we used the service "tagsService" to fetch the popular tags that already exist, and linked them to the <mat-option> of our mat-autocomplete component.
+
+4. Finally we used a filter async in the html of the component "editor" to filter the options based on what the user is typing.
+
 # FILTER OF ARTICLE :
 
 
