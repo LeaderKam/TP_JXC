@@ -177,12 +177,48 @@ Nous avons créé ce composant map, à la base, pour pouvoir choisir une positio
 Dans le but d'avoir une application de bout en bout, Nous avons déployé notre projet sur les VM de l'istic celon les étapes suivantes:<br>
 + Création d'une Machine virtuel à l'istic : La connexion à la VM se fait par VPN et SSH.
 + Achat du nom de domaine koukousite.fr
-+ création du sous-domaine webproject.koukousite.fr
++ création du sous-domaine https://webproject.koukousite.fr
 + génération des fichier de production du front de notre application (ng build --prod)
 + création du serveur nginx et sa configuration pour trouver les fichier de production
 + Lancement du back de l'application en arriere plan pour pouvoir y accéder meme si nous ne somme pas connecté à la machine virtuelle.
 + Configuration du serveur nginx pour écouter le serveur sur le bon port et transmetre les requetes au bon endroit
 + mise en place d'un certificat pour une connexion sécurisé en HTTPS 
++ Ci-dessous le fichier de configuration nginx
+
+```
+server {
+
+    server_name webproject.koukousite.fr;
+
+    location / {
+
+    root /var/www/monsite;
+}
+location /api {
+proxy_pass http://localhost:3000;
+}
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/webproject.koukousite.fr/fullchain.pem; # managed b>    ssl_certificate_key /etc/letsencrypt/live/webproject.koukousite.fr/privkey.pem; # managed>    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+server {
+    if ($host = webproject.koukousite.fr) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name webproject.koukousite.fr;
+listen 80;
+    return 404; # managed by Certbot
+
+
+}
+```
+
+
 
 
 
